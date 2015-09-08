@@ -1,0 +1,6 @@
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\bin\Operaciones.dll.config
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\bin\Operaciones.dll
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\bin\Operaciones.pdb
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\obj\Debug\Operaciones.csprojResolveAssemblyReference.cache
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\obj\Debug\Operaciones.dll
+C:\Users\andres\Documents\GitHub\TrabajoClase\0.0\Operaciones\Operaciones\obj\Debug\Operaciones.pdb
