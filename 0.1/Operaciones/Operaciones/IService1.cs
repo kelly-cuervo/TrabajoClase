@@ -31,7 +31,20 @@ namespace Operaciones
 
 
         [OperationContract]
-        string ConsultarUsuarios();
+        Usuario ConsultarUsuarios(string Persona_Id);
+
+
+        [OperationContract]
+        Boolean AgregarUsuarios(string Persona_Id, string contraseña);
+
+
+        [OperationContract]
+        Boolean EliminarUsuarios(string Persona_Id, string contraseña);
+
+
+        [OperationContract]
+        Boolean ModificarUsuarios(string Persona_Id, string contraseña);
+
 
         [DataContract]
         public class Persona_
@@ -54,6 +67,13 @@ namespace Operaciones
 
             [DataMember]
             public string Contraseña { get; set; }
+
+
+
+            [OperationContract]
+            List <Usuario> listaUsuarios();
+
+
 
         }
 

@@ -16,23 +16,9 @@ namespace Operaciones
     public class Service1 : IService1
     {
         
-        String var_cadenaconexion = (@"server=(localdb)\Projects;database=BD_GuiaPrueba;integrated security=true");
-        SqlConnection var_conexion = new SqlConnection();
-        SqlCommand var_comando = new SqlCommand();
-        SqlDataAdapter var_adaptador = new SqlDataAdapter();
+        Model1Container12 db = new Model1Container12();
 
-        private void abrirconexion()
-        {
-            var_conexion.ConnectionString = var_cadenaconexion;
-            var_conexion.Open();
-
-        }
-
-        private void cerrarconexion()
-        {
-            var_conexion.Close();
-        }
-
+   
 
         public string Suma(int value, int value2)
         {
@@ -62,12 +48,92 @@ namespace Operaciones
         }
 
 
-        public string ConsultarUsuarios()
+               string IService1.Suma(int value1, int value2)
         {
-            abrirconexion();
-            
-
             throw new NotImplementedException();
         }
+
+        string IService1.Resta(int value1, int value2)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IService1.Division(float value1, float value2)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IService1.Multiplicacion(int value1, int value2)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IService1.ConsultarUsuarios()
+        {
+            throw new NotImplementedException();
+
+        }
+
+        public List<Usuario> listaUsuario()
+            return db.UsuarioSet().ToList;
+
+        public Usuario Consultarusuarios(string nombre)
+        {
+            var usuariocon = db.UsuarionConjunto.Where(usuario => usuariocon.Login == nombre).First();
+            return usuariocon;
+        }
+
+        public bool Agregarusuarios(string Persona_Id, string contraseña)
+        {
+            try
+            {
+                Usuario nuevo = new Usuario()
+                {
+                    Persona_Id = Persona_Id,
+                    Contraseña = contraseña
+                };
+                db.UsuarioConjunto.Add(nuevo);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+         public bool Eliminarusuarios(string nombre)
+        {
+            try
+            {
+                db.UsuarioConjunto.Remove(Consultarusuarios(nombre));
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool Modificarusuarios(string Persona_Id,string contraseña)
+        {
+            try
+            {
+                var consulta = db.UsuarioConjunto.Where(Usuario => Usuario.Login.StartsWith(Persona_Id));
+                foreach (var Usuario in consulta)
+                {
+                    Usuario.Persona_Id = Usuario.Persona_Id.Replace(Usuario.Persona_Id, Persona_Id);
+                    Usuario.contraseña = Usuario.contraseña.Replace(Usuario.contraseña, contraseña);
+                }
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
     }
-}
+
