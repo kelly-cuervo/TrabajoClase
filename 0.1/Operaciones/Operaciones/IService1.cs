@@ -24,17 +24,17 @@ namespace Operaciones
         Usuario Consultarusuarios(string nombre);
 
         [OperationContract]
-        [WebInvoke(Method =  "POST", UriTemplate = "agregarusuarios/{nombre,contraseña}", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method =  "GET", UriTemplate = "agregarusuarios", ResponseFormat = WebMessageFormat.Json)]
         string AgregarUsuarios(string nombre, string contraseña);
 
 
         [OperationContract]
-        [WebInvoke(Method =  "POST", UriTemplate = "eliminarusuarios/{nombre}", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "eliminarusuarios/{nombre}/{contraseña}", ResponseFormat = WebMessageFormat.Json)]
         string EliminarUsuarios(string nombre, string contraseña);
 
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "modificarusuarios/{nombre,contraseña}", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "modificarusuarios/{nombre}/{correctnom}/{correctpass}", ResponseFormat = WebMessageFormat.Json)]
         string ModificarUsuarios(string nombre, string contraseña);
 
 
