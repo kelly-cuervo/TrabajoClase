@@ -5,9 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="463c7a7048504cf8b1ae9f1c65ec7db3" Name="Diagrama1" >
-        <EntityTypeShape EntityType="Model1.Usuario" Width="1.5" PointX="3.25" PointY="2.125" />
-        <EntityTypeShape EntityType="Model1.Persona" Width="1.5" PointX="6.375" PointY="1.875" />
-        <AssociationConnector Association="Model1.UsuarioPersona" />
+        <EntityTypeShape EntityType="Model1.Usuario" Width="1.5" PointX="3.5" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

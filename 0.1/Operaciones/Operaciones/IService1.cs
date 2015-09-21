@@ -12,55 +12,43 @@ namespace Operaciones
     [ServiceContract]
     public interface IService1
     {
+       
+        
+ 
+        [OperationContract]
+        [WebInvoke(Method =  "GET", UriTemplate = "mostrarUsuarios", ResponseFormat = WebMessageFormat.Json)]
+        List<Usuario> ConsultarUsuario();
+       
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "mostrarUsuarios/{nombre}", ResponseFormat = WebMessageFormat.Json)]
+        Usuario Consultarusuarios(string nombre);
 
         [OperationContract]
-        string Suma(int value1, int value2);
+        [WebInvoke(Method =  "POST", UriTemplate = "agregarusuarios/{nombre,contraseña}", ResponseFormat = WebMessageFormat.Json)]
+        string AgregarUsuarios(string nombre, string contraseña);
+
 
         [OperationContract]
-        string Resta(int value1,int value2);
+        [WebInvoke(Method =  "POST", UriTemplate = "eliminarusuarios/{nombre}", ResponseFormat = WebMessageFormat.Json)]
+        string EliminarUsuarios(string nombre, string contraseña);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "modificarusuarios/{nombre,contraseña}", ResponseFormat = WebMessageFormat.Json)]
+        string ModificarUsuarios(string nombre, string contraseña);
+
 
        
-
-        [OperationContract]
-        string Division(float value1, float value2);
-
-
-
-        [OperationContract]
-        string Multiplicacion(int value1, int value2);
-
-
-        [OperationContract]
-        Usuario ConsultarUsuarios(string Persona_Id);
-
-
-        [OperationContract]
-        Boolean AgregarUsuarios(string Persona_Id, string contraseña);
-
-
-        [OperationContract]
-        Boolean EliminarUsuarios(string Persona_Id, string contraseña);
-
-
-        [OperationContract]
-        Boolean ModificarUsuarios(string Persona_Id, string contraseña);
-
-
+        
+        
+        
+        
         [DataContract]
-        public class Persona_
+        public class usuario
         {
 
             [DataMember]
             public int Id { get; set; }
-
-            [DataMember]
-            public string Nombres { get; set; }
-
-            [DataMember]
-            public string Apellidos { get; set; }
-
-            [DataMember]
-            public string Telefono { get; set; }
 
             [DataMember]
             public string Usuario { get; set; }

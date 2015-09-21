@@ -1,0 +1,3 @@
+C:\Users\Kelly!!!\Documents\GitHub\TrabajoClase\0.1\Operaciones\Operaciones\obj\Debug\SW - Actividd cLASE.csprojResolveAssemblyReference.cache
+C:\Users\Kelly!!!\Documents\GitHub\TrabajoClase\0.1\Operaciones\Operaciones\obj\Debug\Operaciones.dll
+C:\Users\Kelly!!!\Documents\GitHub\TrabajoClase\0.1\Operaciones\Operaciones\obj\Debug\Operaciones.pdb

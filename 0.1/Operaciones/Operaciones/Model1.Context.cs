@@ -26,6 +26,5 @@ namespace Operaciones
         }
     
         public DbSet<Usuario> UsuarioConjunto { get; set; }
-        public DbSet<Persona> PersonaConjunto { get; set; }
     }
 }
